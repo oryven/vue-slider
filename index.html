@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>carousel vue</title>
+</head>
+<body>
+
+    <div id="container">
+
+        <div class="container-carousel">
+            <div class="items">
+
+                <div class="item active">
+    
+                    <img :src="slides[slidesActive].image" :alt="slides[slidesActive].title">
+    
+                    <div class="text">
+    
+                        <h3>{{slides[slidesActive].title}}</h3>
+    
+                        <p>{{slides[slidesActive].text}}</p>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+            <div class="thumbs">
+    
+                <div v-for="element, i in slides" class="thumb" :class="i === slidesActive ? 'active' : ''" :mykey="i">
+    
+                    <img :src="element.image" :alt="element.title">
+    
+                </div>
+    
+                <div class="avanti" @click="next"><i class="fas fa-arrow-circle-down"></i></div>
+    
+                <div class="indietro" @click="prev"><i class="fas fa-arrow-circle-down"></div>
+    
+            </div>
+        </div>
+
+      
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    
+</body>
+</html>
